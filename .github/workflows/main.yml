@@ -32,4 +32,4 @@ jobs:
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         aws-region: ${{ secrets.AWS_DEFAULT_REGION }}
     # move files to s3
-    - run: cd build/ && aws s3 sync . s3://cdkdemostack-awsgrowthdayscdks3bucketcdc8aea2-3n5s2zw4hfni/ --acl public-read --delete
+    - run: cd build/ && aws s3 sync . s3://${{ secrets.AWS_S3_BUCKET_NAME}}/ --acl public-read --delete
